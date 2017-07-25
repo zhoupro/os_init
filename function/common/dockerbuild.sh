@@ -3,7 +3,7 @@
 dockerbuild(){
 
 
-    if [  ! -f ~/.config/dockerproxy/inslock ];then
+    if [  ! -f ~/.config/dockerproxy/inslock ] && [ "1"$ifproxy = "11" ];then
         echo 'make docker proxy'
         mkdir -p  ~/.config/dockerproxy
         touch ~/.config/dockerproxy/inslock
@@ -17,7 +17,10 @@ END
         cat /opt/soft/xx-net/data/gae_proxy/CA.crt >>/etc/ssl/certs/ca-certificates.crt
         systemctl daemon-reload
         systemctl restart docker
-
+    else
+        rm -rf /etc/systemd/system/docker.service.d/http-proxy.conf
+        systemctl daemon-reload
+        systemctl restart docker
     fi
 
 
@@ -26,7 +29,7 @@ END
     fi
     declare -a myarray
     myarray=(
-        cs_6_nginx_1.4.4
+        cs_6_nginx_1.4.4 cs_6_php_5.3.29 cs_6_php_7.1.3 dn_mysql_5.6 uu_14.04_vsftpd uu_14.04_django_1.11
             )
 
     for i in ${myarray[@]};

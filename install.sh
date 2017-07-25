@@ -61,9 +61,8 @@ installhelper selenium
 
 
 # install idea ide
-#myarray=(phpstorm pycharm datagrip webstorm idea clion webstorm gogland rubymine)
+myarray=(phpstorm pycharm datagrip webstorm idea clion webstorm  rubymine)
 
-myarray=(webstorm)
 for i in ${myarray[@]};
 do
    if [ ! -d /opt/soft/dev/idea/$i ] ;then
