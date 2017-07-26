@@ -29,13 +29,13 @@ END
     fi
     declare -a myarray
     myarray=(
-        cs_6_nginx_1.4.4 cs_6_php_5.3.29 cs_6_php_7.1.3 dn_mysql_5.6 uu_14.04_vsftpd uu_14.04_django_1.11
+        cs_6_nginx_1.4.4 cs_6_php_5.3.29 cs_6_php_7.1.3 dn_mysql_5.6  uu_14.04_django_1.11
             )
 
     for i in ${myarray[@]};
     do
     if (( $(docker images  | awk '{print $1}' | grep ^prozhou/$i | wc -l)==0 )) ;then
-      docker build -t prozhou/$i  docker-imges/$i/
+      docker build --no-cache -t prozhou/$i  docker-imges/$i/
     fi
     done
 
