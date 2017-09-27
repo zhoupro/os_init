@@ -75,7 +75,7 @@ done
 if [ "1"$ifproxy = "11" ] ;then
     sudo -u prozhou python3.5  $current_dir/function/common/androidstudio.py
     unzip android.zip
-    mv android-studio /opt/soft/dev/idea/android-studio
+    mv android-studio /opt/soft/dev/android-studio
 fi
 
 
