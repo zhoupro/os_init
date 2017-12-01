@@ -19,6 +19,7 @@ echo "Install beginning"
 
 #安装控制器
 source "$current_dir/function/lib/installhelper.sh"
+
 installhelper  xxnet
 installhelper  font
 installhelper  jdk
@@ -41,9 +42,10 @@ installhelper idea idea
 installhelper idea clion
 installhelper idea rubymine
 installhelper idea goland
-
+installhelper  node
+installhelper  go
 if [ "1"$ifproxy = "11" ] ;then
-    installhelper android
+    installhelper androidstudio
 fi
 
 

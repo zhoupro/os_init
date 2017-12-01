@@ -1,13 +1,10 @@
-from selenium import webdriver
 from bs4 import BeautifulSoup
 from downhelper import download
+from client import have_proxy
 
 
-def getAndroidStudioVersion():
-    proxy = "127.0.0.1:8087" # IP:PORT or HOST:PORT
-    chrome_options = webdriver.ChromeOptions()
-    chrome_options.add_argument('--proxy-server=%s' % proxy)
-    browser = webdriver.Chrome(executable_path='/opt/soft/dev/selenium/chromedriver',chrome_options=chrome_options)
+def getAndroidStudioURL(HOST,PORT):
+    browser = have_proxy(HOST, PORT)
     browser.get('https://developer.android.com/studio/index.html')
     doc = BeautifulSoup(browser.page_source, 'lxml')
     downobj = doc.find(attrs={"id":"linux-bundle"})
@@ -15,6 +12,8 @@ def getAndroidStudioVersion():
     browser.close()
     return downobj['href']
 
+HOST = "127.0.0.1"
+PORT = "8087"
 
-url = getAndroidStudioVersion()
+url = getAndroidStudioURL(HOST,PORT)
 download(url,'android.zip')

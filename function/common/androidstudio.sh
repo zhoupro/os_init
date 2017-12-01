@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-function android(){
+function  androidstudio(){
 
     if [ ! -d /opt/soft/dev/android-studio ] ;then
         sudo -u prozhou python3.5  $current_dir/function/lib/androidstudio.py

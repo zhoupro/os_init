@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-export http_proxy=http:172.17.0.1:8087
-export https_proxy=http:172.17.0.1:8087
+export http_proxy=http://localhost:8087
+export https_proxy=http://localhost:8087
 
 
 
