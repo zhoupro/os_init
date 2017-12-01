@@ -3,19 +3,16 @@
 # apt package
 aptenv(){
   apt-get update
-  #remove bug reporter since it's annoying
-  apt-get remove  -y  apport
   apt-get  autoremove -y
-
-
   declare -a myarray
  
   myarray=(
               libnss3-tools python-gtk2 libffi-dev python-appindicator libnss3-tools  fcitx-table-wbpy
               apt-transport-https ca-certificates
-              vim-gnome   git  filezilla  unrar p7zip    build-essential   cmake putty  python-pip
-              vlc  ipython wget curl
-              plasma-nm  iftop    okular kchmviewer  goldendict mypaint dia miredo
+              vim-gnome   git    unrar p7zip    build-essential   cmake putty  python-pip
+              ipython wget curl
+              iftop    okular kchmviewer  goldendict  dia miredo
+              electronic-wechat teamviewer-host xmind calibre
          )
 
 

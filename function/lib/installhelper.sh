@@ -4,24 +4,29 @@
 #
 # $1  package name
 
-
-
 function installhelper(){
+     install_fun=$1
+     shift
+     install_args=$@
+	 exact_file="function/${com_codename}${com_release}/${install_fun}.sh"
+     echo $exact_file
+	 if [[ $com_codename == "deepin" ]];then
+	    exact_file="function/${com_codename}/${install_fun}.sh"
+	 fi
 
-	 exact_file="function/${com_codename}${com_release}/${1}.sh"
-	 common_file="function/common/${1}.sh"
-	 echo $common_file $exact_file
+	 common_file="function/common/${install_fun}.sh"
+
 
 	 if [  -f "$exact_file" ]; then
-	 	echo "Install  $1 from exact_file file "
+	 	echo "Install  $install_fun from exact_file file "
         source "$exact_file"
-        $1
+        $install_fun $install_args
      elif [  -f "$common_file" ]; then
-     	echo "Install  $1 from common file "
+     	echo "Install  $install_fun from common file "
      	source "$common_file"
-     	$1
+     	$install_fun $install_args
      else
-     	echo "Your $1 install file is missing!!!"
+     	echo "Your $install_fun install file is missing!!!"
      fi
 
 }

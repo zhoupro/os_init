@@ -12,6 +12,7 @@ def getIdeaProductCodeByName(name='phpstorm'):
         'pycharm':"PCP",
         'idea':'IIU',
         'rubymine':'RM',
+        'goland': 'GO',
     }
     return idea_array[name]
 

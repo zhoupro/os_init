@@ -29,9 +29,8 @@ END
     fi
     declare -a myarray
     myarray=(
-        cs_6_nginx_1.4.4 cs_6_php_5.3.29 cs_6_php_7.1.3 dn_mysql_5.6  uu_16.04_django_1.11
-        uu_16.04_vsftpd
-            )
+        cs_6_nginx_1.4.4 cs_6_php_5.3.29 cs_6_php_7.1.3 dn_mysql_5.6  uu_16.04_vsftpd
+           )
 
     for i in ${myarray[@]};
     do

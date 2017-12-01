@@ -1,5 +1,4 @@
-
-
+#!/usr/bin/env bash
 
 function systeminfo(){ 
    
@@ -12,3 +11,5 @@ function systeminfo(){
 	com_release=$(cat /etc/lsb-release 2>/dev/null|awk -F "=" ' $1 == "DISTRIB_RELEASE" {print $2}')
 
 }
+
+systeminfo
