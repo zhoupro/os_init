@@ -15,7 +15,7 @@ aptenv(){
               apt-transport-https ca-certificates
               vim-gnome   git  filezilla  unrar p7zip    build-essential   cmake putty  python-pip
               vlc  ipython wget curl
-              plasma-nm  iftop    okular kchmviewer  goldendict mypaint dia miredo
+              plasma-nm  iftop    okular kchmviewer  goldendict mypaint dia miredo firefox
          )
 
 

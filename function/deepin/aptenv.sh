@@ -12,7 +12,7 @@ aptenv(){
               vim-gnome   git    unrar p7zip    build-essential   cmake putty  python-pip
               ipython wget curl
               iftop    okular kchmviewer  goldendict  dia miredo
-              electronic-wechat teamviewer-host xmind calibre
+              electronic-wechat teamviewer-host xmind calibre  firefox
          )
 
 

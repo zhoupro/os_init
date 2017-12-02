@@ -1,10 +1,10 @@
 from bs4 import BeautifulSoup
 from downhelper import download
-from client import no_proxy
+from client import have_proxy
 
 
-def getGoURL():
-    browser = no_proxy()
+def getGoURL(HOST,PORT):
+    browser = have_proxy(HOST, PORT)
     browser.get('https://golang.org/dl/')
     doc = BeautifulSoup(browser.page_source, 'lxml')
     downobj = doc.find_all(attrs={"class":"downloadBox"})
@@ -12,6 +12,8 @@ def getGoURL():
     browser.close()
     return downobj[2]['href']
 
-url = getGoURL()
+HOST = "127.0.0.1"
+PORT = "8087"
+url = getGoURL(HOST,PORT)
 
 download(url,'go.tar.gz')

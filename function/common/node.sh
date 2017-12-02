@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 function  node(){
 
-    if [ ! -d /opt/soft/dev/nodejs ] ;then
+    if [ ! -d /opt/soft/dev/node ] ;then
         sudo -u prozhou python3.5  $current_dir/function/lib/nodejs.py
         tar xvJf nodejs.tar.xz
         rm -rf /opt/soft/dev/node  nodejs.tar.xz

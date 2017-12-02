@@ -21,10 +21,7 @@ function chromedriver_is_installed(){
 
 function selenium(){
 
-    if  [ "1"$ifproxy != "11" ] ;then
-        echo "selenium need proxy"
-        return 1
-    fi
+
 
     selenium_is_installed
     res=`echo $?`
@@ -40,15 +37,7 @@ function selenium(){
         echo 'export PATH=$PATH:/opt/soft/dev/selenium/phantomjs/bin' >> /etc/profile
     fi
 
-    chromedriver_is_installed
-    res=`echo $?`
-    if [ $res = "0" ]; then
-        bash function/lib/pxy.sh wget https://chromedriver.storage.googleapis.com/2.29/chromedriver_linux64.zip --no-check-certificate
-        unzip chromedriver_linux64.zip
-        rm -f chromedriver_linux64.zip
-        mv chromedriver  /opt/soft/dev/selenium/chromedriver
 
-    fi
 
     if [ ! -f  /usr/local/bin/geckodriver ]; then
         wget https://github.com/mozilla/geckodriver/releases/download/v0.19.1/geckodriver-v0.19.1-linux64.tar.gz
@@ -56,6 +45,19 @@ function selenium(){
         rm -f geckodriver-v0.19.1-linux64.tar.gz
         mv geckodriver /usr/local/bin/geckodriver
 
+    fi
+
+
+    if  [ "1"$ifproxy == "11" ] ;then
+        chromedriver_is_installed
+        res=`echo $?`
+        if [ $res = "0" ]; then
+            bash function/lib/pxy.sh wget https://chromedriver.storage.googleapis.com/2.29/chromedriver_linux64.zip --no-check-certificate
+            unzip chromedriver_linux64.zip
+            rm -f chromedriver_linux64.zip
+            mv chromedriver  /opt/soft/dev/selenium/chromedriver
+
+        fi
     fi
 
 

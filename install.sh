@@ -44,9 +44,8 @@ installhelper idea rubymine
 installhelper idea goland
 installhelper  node
 installhelper  go
-if [ "1"$ifproxy = "11" ] ;then
-    installhelper androidstudio
-fi
+installhelper androidstudio
+
 
 
 
