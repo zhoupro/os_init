@@ -44,8 +44,8 @@ installhelper idea clion
 installhelper idea rubymine
 installhelper idea goland
 installhelper  node
-installhelper androidstudio
 installhelper  go
+installhelper androidstudio
 
 
 

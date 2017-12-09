@@ -2,7 +2,7 @@
 function  go(){
     if  [ "1"$ifproxy == "11" ] ;then
         if [ ! -d /opt/soft/dev/go ] ;then
-            sudo -u $login_user python3  $current_dir/function/lib/go.py
+            bash function/lib/pxy.sh wget  --no-check-certificate $(sudo -u $login_user python3  $current_dir/function/lib/go.py) -O go.tar.gz
             tar xzvf go.tar.gz
             rm -rf go.tar.gz /opt/soft/dev/go
             mv go /opt/soft/dev/

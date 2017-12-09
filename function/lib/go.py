@@ -15,5 +15,4 @@ def getGoURL(HOST,PORT):
 HOST = "127.0.0.1"
 PORT = "8087"
 url = getGoURL(HOST,PORT)
-
-download(url,'go.tar.gz')
+print(url)
