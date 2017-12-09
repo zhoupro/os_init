@@ -34,8 +34,8 @@ END
 
     for i in ${myarray[@]};
     do
-    if (( $(docker images  | awk '{print $1}' | grep ^prozhou/$i | wc -l)==0 )) ;then
-      docker build --no-cache -t prozhou/$i  docker-imges/$i/
+    if (( $(docker images  | awk '{print $1}' | grep "^$login_name/$i" | wc -l)==0 )) ;then
+      docker build --no-cache -t $login_name/$i  docker-imges/$i/
     fi
     done
 

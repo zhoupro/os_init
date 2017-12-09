@@ -9,7 +9,7 @@ xxnet(){
 
     git clone git://github.com/XX-net/XX-Net.git xx-net
     cd xx-net
-    git checkout 3.3.1
+    git checkout master
     cd ..
     mkdir -p /opt/soft
     mv xx-net /opt/soft/

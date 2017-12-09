@@ -7,6 +7,7 @@
 
 
 current_dir="$(dirname $0)"
+login_user=$(who|awk '{print $1}')
 
 #读取参数
 source "$current_dir/function/lib/readinput.sh"
@@ -43,8 +44,8 @@ installhelper idea clion
 installhelper idea rubymine
 installhelper idea goland
 installhelper  node
-installhelper  go
 installhelper androidstudio
+installhelper  go
 
 
 

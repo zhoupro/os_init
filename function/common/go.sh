@@ -2,7 +2,7 @@
 function  go(){
     if  [ "1"$ifproxy == "11" ] ;then
         if [ ! -d /opt/soft/dev/go ] ;then
-            sudo -u prozhou python3.5  $current_dir/function/lib/go.py
+            sudo -u $login_user python3  $current_dir/function/lib/go.py
             tar xzvf go.tar.gz
             rm -rf go.tar.gz /opt/soft/dev/go
             mv go /opt/soft/dev/

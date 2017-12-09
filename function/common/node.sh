@@ -2,7 +2,7 @@
 function  node(){
 
     if [ ! -d /opt/soft/dev/node ] ;then
-        sudo -u prozhou python3.5  $current_dir/function/lib/nodejs.py
+        sudo -u $login_user python3  $current_dir/function/lib/nodejs.py
         tar xvJf nodejs.tar.xz
         rm -rf /opt/soft/dev/node  nodejs.tar.xz
         mv node-v* /opt/soft/dev/node
